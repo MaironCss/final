@@ -1,0 +1,253 @@
+// контейнер по умолчанию. Отступ между колонками
+$container: 1140px;
+$colGups: 15px;
+
+// размер текста
+$textFont-size: 1rem;  // 16px
+$linkColor: blue;
+
+// контрольные точки, на которых наш макет будет перестраиваться (могут меняться зависимости от дизайна)
+$breakpoints: (
+        xs: 0,
+        sm: 575px,
+        md: 768px,
+        lg: 1025px,
+        xl: 1200px,
+        xxl: 1440px
+);
+
+// количество колонок
+$columns: 12;
+
+// проходимся циклом по всем контрольным точкам
+@each $breakpoint in $breakpoints {
+
+  // в name записываем имя размера (xs, sm, md ...)
+  // в size записываем кол-во колонок, которые должен занимать элемент с эти классом.
+  $name: nth($breakpoint, 1);
+  $size: nth($breakpoint, 2);
+  
+  // генерируем медиа запрос для ширины брейкпоинта, который сейчас является текущим в цикле.
+  @media only screen and (min-width: $size) {
+    [class*="col-#{$name}"] {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding-right: $colGups;
+      padding-left: $colGups;
+    }
+    @for $i from 1 through $columns {
+      .col-#{$name}-#{$i} {
+        flex-basis: 100% / $columns * $i;
+        max-width: 100% / $columns * $i;
+      }
+    }
+    @for $i from 1 through $columns {
+      .col-#{$name}-offset-#{$i} {
+        margin-left: 100% / $columns * $i
+      }
+    }
+  }
+}
+.container{
+  max-width: $container;
+  width: 100%;
+  margin: 0 auto;
+}
+// layout
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$colGups;
+  margin-left: -$colGups;
+}
+
+[class^='col']{
+  padding-left:$colGups;
+  padding-right:$colGups;
+  width: 100%;
+  min-height: 1px;
+}
+
+
+
+// main styles
+
+
+//buttons
+a, button{
+  transition: .3s ease-in;
+  transition-property: color, background-color, opacity;
+  svg{
+    fill:currentColor;
+  }
+}
+button, .button{
+  cursor: pointer;
+}
+
+*{
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	
+}
+@font-face {
+    font-family: 'Roman';
+    src: url('../fonts/lmromanslant10-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+h1,h2,h3,h4,h5,h6{
+ font-family: 'Raleway', sans-serif;
+ margin: 0;
+ padding: 0;
+}
+p{
+ font-family: 'Roman'; 
+ margin: 0;
+ padding: 0;
+}
+
+
+.visually-hidden{
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: -999999999999px;
+}
+.template{
+  height: 88.2354vh;
+  background-color: #efefef;
+  margin: 5.8823vh;
+  position: relative;
+  background-image: url(../img/person.png);
+  background-position: 80% 5.8823vh;
+  background-repeat: no-repeat;
+
+}
+.header-menu{
+  display: flex;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+  padding: 39px 60px;
+}
+.menu-tag{
+  margin-right: 24px;
+  text-transform: uppercase;
+  font-size: 1.125em;
+  
+}
+.menu{
+  width: 25px;
+  height: 25px;
+  & span{
+    display: block;
+  width: 100%;
+  border: 1px solid #221815;
+  margin-top: 4px;
+  }
+}
+.letter{
+  position: absolute;
+  top: 0;
+  left: 4%;
+  height: 100%;
+  & img{
+    height: 100%;
+  }
+}
+.template-content{
+  padding-top: 200px;
+}
+.template-tagline, .name-tagline{
+  font-size: 3.125em;
+  font-weight: 100;
+  margin-bottom: 20px;
+  & span{
+    font-weight: 700;
+  }
+}
+.template-text{
+  max-width: 445px;
+  font-size: 1.125em;
+  line-height: 1.3888;
+}
+.line{
+  display: inline-block;
+  height: 80px;
+  border: .5px solid #000;
+  margin: 40px 0 0 6px;
+}
+.name{
+   height: 88.2354vh;
+  background-color: #efefef;
+  margin: 5.8823vh;
+  position: relative;
+}
+.letter-name{
+   left: 8%;
+}
+.name-photo{
+  width: 100%;
+  & img{
+    width: 100%;
+  }
+}
+.name-content {
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    align-items: center;
+        padding-top: 120px;
+}
+.horizontal-line{
+  width: 80px;
+  height: 0px;
+  margin: 0;
+}
+.name-content__text{
+  width: 100%;
+}
+.name-tagline{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.name-text{
+  font-size: 1.125em;
+  line-height: 1.3888;
+  &__bottom{
+    margin-top: 30px;
+  }
+}
+.name-list{
+ list-style-type:none;
+ display: flex;
+ margin: 71px 0 0 0;
+ padding: 0;
+}
+.name-list__item{
+  height: 33px;
+  width: 33px;
+  background-color: #909090;
+  margin-right: 20px;
+  & a{
+    display: block;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    &:hover{
+      background-color: #000;
+    }
+  }
+}
+svg{
+  margin: 7px;
+}
