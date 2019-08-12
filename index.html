@@ -10,17 +10,28 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700,900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style/app.css">
 </head>
-</head>
+
 <body>
-	<section class="template">
+	<section class="template" id="home">
 		<h1 class="visually-hidden" >this is first heading</h1>
 		<header class="header-menu" >
 			<h3 class="menu-tag" >Menu</h3>
-			<div class="menu">
+			<button class="btn-menu">
 				<span></span>
 				<span></span>
 				<span></span>
-			</div>
+			</button>
+
+			<nav class="nav-menu">
+				<ul class="menu">
+					<li class="menu-item"><a href="#home" class="menu-link">Home</a></li>
+					<li class="menu-item"><a href="#about" class="menu-link">About</a></li>
+					<li class="menu-item"><a href="#work" class="menu-link">Work</a></li>
+					<li class="menu-item"><a href="#life" class="menu-link">Life</a></li>
+					<li class="menu-item"><a href="#gallery" class="menu-link">Gallery</a></li>
+					<li class="menu-item"><a href="#contact" class="menu-link">Contact</a></li>
+				</ul>
+			</nav>
 		</header>
 		<div class="letter letter-template">
 			<img src="img/A.png" alt="letter A">
@@ -37,7 +48,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="name">
+	<section class="name" id="about">
 		<div class="letter letter-name">
 			<img src="img/P.png" alt="letter P">
 		</div>
@@ -61,28 +72,28 @@
 					</p>
 					<ul class="name-list">
 						<li class="name-list__item">
-							<a href="#">
+							<a href="#" target="blank">
 								<svg height="18px" width="18px">
 									<use xlink:href="#face"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="name-list__item">
-							<a href="#">
+							<a href="#" target="blank">
 								<svg height="18px" width="18px">
 									<use xlink:href="#inst"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="name-list__item">
-							<a href="#">
+							<a href="#" target="blank">
 								<svg height="20px" width="20px">
 									<use xlink:href="#tw"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="name-list__item">
-							<a href="#">
+							<a href="#" target="blank">
 								<svg height="18px" width="18px">
 									<use xlink:href="#pint"></use>
 								</svg>
@@ -93,7 +104,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="slider">
+	<section class="slider" id="work">
 		<div class="ba-slider">
             <div class="slider-item">
 
@@ -130,7 +141,7 @@
             </div>
         </div>
 	</section>
-	<section class="minim" >
+	<section class="minim" id="life">
 		<div class="letter">
 			<img src="img/L.png" alt="letter">
 		</div>
@@ -151,27 +162,37 @@
 			</div>
 		</div>
 	</section>
-	<section class="carusel-slider">
+	<section class="slider-section" id="gallery">
 		<div class="letter">
 			<img src="img/l.png" alt="letter">
 		</div>
-
-		<div class="ba-carusel">
-			<div class="carusel-item">
-				<img src="img/car1.png" alt="1">
+			
+				<div class="slider-wrapper">
+				<div class="carusel-slider">
+					<div class="ba-carusel">
+						<div class="carusel-item">
+							<img src="img/car1.png" alt="1">
+						</div>
+						<div class="carusel-item">
+							<img src="img/car2.png" alt="1">
+						</div>
+						<div class="carusel-item">
+							<img src="img/car3.png" alt="1">
+						</div>
+						<div class="carusel-item">
+							<img src="img/car3.png" alt="1">
+						</div>
+						<div class="carusel-item">
+							<img src="img/car2.png" alt="1">
+						</div>
+				</div>
 			</div>
-			<div class="carusel-item">
-				<img src="img/car2.png" alt="1">
-			</div>
-			<div class="carusel-item">
-				<img src="img/car3.png" alt="1">
-			</div>
-
+			
 		</div>
 	</section>
-	<section class="hello">
+	<section class="hello" id="contact">
 		<div class="container">
-			<div class="letter">
+			<div class="letter" >
 				<img src="img/ohello.png" alt="letter">
 			</div>
 			<h2 class="hello-tagline">
@@ -186,9 +207,7 @@
 						<input type="email" placeholder="Your Email">
 						<input type="text" placeholder="Subject">
 					</div>
-					<textarea name="Message" id="Message" >
-						
-					</textarea>
+					<textarea name="Message" id="Message" placeholder="Message" ></textarea>
 					<button class="send-btn" >SEND MESSAGE</button>
 				</form>
 			</div>
