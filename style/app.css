@@ -1208,4 +1208,8 @@ svg {
   .menu-item a:hover {
     color: #17ad9c; }
 
+.ba-form-error {
+  display: none;
+  color: red; }
+
 /*# sourceMappingURL=app.css.map */

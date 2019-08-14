@@ -125,6 +125,7 @@ p{
 @import "slick-theme.scss";
 
 
+
 .visually-hidden{
   height: 0;
   width: 0;
@@ -555,4 +556,10 @@ svg{
    
   }
 }
+
+.ba-form-error {
+    display: none;
+    color: red
+}
+
 
