@@ -68,64 +68,77 @@ $('.menu a').on('click', function(e){
   // e.preventDefault();
   $('.nav-menu').removeClass('active');
 });
-$('.ba-form').on('submit', function (e) {
-    e.preventDefault();
-    let inputs = $(this).find('[data-valid]');
-    console.log(inputs);
-    let isValid = true;
-    inputs.each(function(input) {
-        isValid = validate.call(this);
-    })
-    isValid != false ? isValid = true : isValid =false;
-    console.log('submit valid - ' + isValid);
+$('.ba-form').on('submit', function(e){
+ e.preventDefault();
+
+ let inputEmail = $('#contact-email'),
+   inputName = $('#contact-name');
+   
+
+ $('.ba-form-error').css('display', 'none');
+
+ let validateEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
+
+ if(!validateEmail.test(inputEmail.val())){
+   //alert('incorrect email');
+   inputEmail.closest('.flex-form').find('.ba-form-error').css('display', 'block')
+ }
+
+ if(inputName.val() === ''){
+   inputName.closest('.flex-form').css('display', 'block')
+ }
+
+ 
 });
-
-let validate = function(){
-  let inputData = $(this).data('valid').split(' '),
-    inputValue = $(this).val();
-
-  let validateStatus = true;
-
-  inputData.forEach(element => {
-
-    switch (element) {
-      case 'required':
-      validateStatus = validRequired(inputValue);
-      break;
-      case 'email':
-      validateStatus = validEmail(inputValue);
-      break;
-      default:
-      break;
-    }
-  });
-  return validateStatus;
-}
-
-
-
-
-
-$('[data-valid]').on('change', validate)
-let validRequired = function (value) {
-    if (value != '') {
-        
-    } else {
-        console.log('This field is required');
-
-        return false
-    }
-}
-let validEmail = function (value) {
-    let validateEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-    if (!validateEmail.test(value)) {
-        console.log('Email is invalid');
-        return false
-    }
-};
-
 var tl = new TimelineMax();
+
+
+
+
 
 tl
     .from($('.letter'), 1.5, {x: -1000})
-    .from($('.line'), .5, {y: -1000})
+    .from($('.line'), .5, {height: 0})
+
+
+str = $(".template-tagline").text().split(''); // берем наш текст и в массив
+$(".template-tagline").text(''); // делаем пустой див
+
+$.each(str, function() { // идем по массиву
+  // добавляем к диву наши символы в span
+  $(".template-tagline").append('<span class="style">' + this + '</span>');
+});
+
+str = $(".name-tagline").text().split(''); // берем наш текст и в массив
+$(".name-tagline").text(''); // делаем пустой див
+
+$.each(str, function() { // идем по массиву
+  // добавляем к диву наши символы в span
+  $(".name-tagline").append('<span class="style">' + this + '</span>');
+});
+
+str = $(".minim-tagline").text().split(''); // берем наш текст и в массив
+$(".minim-tagline").text(''); // делаем пустой див
+
+$.each(str, function() { // идем по массиву
+  // добавляем к диву наши символы в span
+  $(".minim-tagline").append('<span class="style">' + this + '</span>');
+});
+
+str = $(".hello-tagline").text().split(''); // берем наш текст и в массив
+$(".hello-tagline").text(''); // делаем пустой див
+
+$.each(str, function() { // идем по массиву
+  // добавляем к диву наши символы в span
+  $(".hello-tagline").append('<span class="style">' + this + '</span>');
+});
+
+
+var tll = new TimelineMax();
+
+tll.
+
+  staggerFromTo($('.template-tagline .style'), .5, {y:-50, opacity: 0}, {y:0, opacity: 1}, .2)
+
+
+

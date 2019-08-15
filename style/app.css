@@ -936,20 +936,10 @@ section {
     .name-content__text {
       padding: 0 20px; } }
 
-.name-tagline {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly; }
-  @media screen and (max-width: 575px) {
-    .name-tagline {
-      display: block;
-      text-align: center; } }
+@media screen and (max-width: 575px) {
+  .name-tagline {
+    display: block;
+    text-align: center; } }
 
 .name-text {
   font-size: 1.125em;
@@ -1086,7 +1076,8 @@ svg {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-bottom: 33px; }
+  margin-bottom: 33px;
+  position: relative; }
   .flex-form input {
     width: 278px;
     height: 46px;
@@ -1211,5 +1202,9 @@ svg {
 .ba-form-error {
   display: none;
   color: red; }
+
+.ba-form-label {
+  position: absolute;
+  bottom: 0; }
 
 /*# sourceMappingURL=app.css.map */
