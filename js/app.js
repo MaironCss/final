@@ -138,7 +138,20 @@ var tll = new TimelineMax();
 
 tll.
 
-  staggerFromTo($('.template-tagline .style'), .5, {y:-50, opacity: 0}, {y:0, opacity: 1}, .2)
+  staggerFromTo($('.template-tagline .style'), .2, {y:-50, opacity: 0}, {y:0, opacity: 1}, .1)
 
 
+$(window).scroll(function() {
+   
+            
+            if($(this).scrollTop()) {
+            // создаем эффекты
 
+              var tll1 = new TimelineMax();
+
+            tll1.
+            staggerFromTo($('.name-tagline .style'), .2, {y:-50, opacity: 0}, {y:0, opacity: 1}, .1)
+            }
+        
+    
+});
