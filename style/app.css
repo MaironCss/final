@@ -543,6 +543,9 @@ body {
   @media screen and (max-width: 575px) {
     body {
       font-size: 0.6rem; } }
+  @media screen and (max-width: 400px) {
+    body {
+      font-size: 0.6rem; } }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', sans-serif;
@@ -903,6 +906,10 @@ section {
       max-width: 250px; } }
   .name-photo img {
     width: 100%; }
+  @media screen and (max-width: 430px) {
+    .name-photo {
+      max-width: 150px;
+      max-height: 150px; } }
 
 .name-content {
   display: -webkit-box;
@@ -1018,6 +1025,9 @@ svg {
     .minim-content {
       margin-right: 0;
       padding: 50px 25px; } }
+  @media screen and (max-width: 430px) {
+    .minim-content {
+      padding: 0 25px; } }
 
 @media screen and (max-width: 575px) {
   .minim-tagline {
@@ -1059,6 +1069,9 @@ svg {
   text-align: center;
   margin: 35px 0 0 0;
   font-size: 1.125em; }
+  @media screen and (max-width: 430px) {
+    .hello-text {
+      margin-top: 15px; } }
 
 .hello-form {
   max-width: 590px;
@@ -1066,7 +1079,10 @@ svg {
   padding-top: 98px; }
   @media screen and (max-width: 575px) {
     .hello-form {
-      padding-top: 49px; } }
+      padding-top: 40px; } }
+  @media screen and (max-width: 430px) {
+    .hello-form {
+      padding-top: 30px; } }
 
 .flex-form {
   display: -webkit-box;
@@ -1079,7 +1095,7 @@ svg {
   margin-bottom: 33px;
   position: relative; }
   .flex-form input {
-    width: 278px;
+    width: 100%;
     height: 46px;
     background-color: transparent;
     outline: none;
@@ -1101,6 +1117,15 @@ svg {
       .flex-form input {
         width: 100%;
         margin-bottom: 20px; } }
+  @media screen and (max-width: 430px) {
+    .flex-form input {
+      width: 100%; } }
+
+.form-enter {
+  width: 278px; }
+  @media screen and (max-width: 430px) {
+    .form-enter {
+      width: 257px; } }
 
 #Message {
   width: 100%;
@@ -1112,6 +1137,9 @@ svg {
   margin-bottom: 30px;
   padding: 6px 10px;
   font-size: 1.2em; }
+  @media screen and (max-width: 430px) {
+    #Message {
+      margin-bottom: 15px; } }
 
 .send-btn {
   width: 100%;
@@ -1122,6 +1150,9 @@ svg {
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700; }
+  @media screen and (max-width: 430px) {
+    .send-btn {
+      height: 35px; } }
 
 .ba-carusel img {
   display: block;

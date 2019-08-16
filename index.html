@@ -223,12 +223,15 @@
 			<div class="hello-form">
 				<form action="get" class="ba-form">
 					<div class="flex-form">
-						
-						<input type="email" id="contact-email"placeholder="Your Email"  data-valid='required email'  name='contact-email'><label for="contact-email" class="ba-form-label"></label>
-						<span class='ba-form-error'>Required field</span>
-						<input type="text" id="contact-name" placeholder="Subject" data-valid='required '  name='contact-name'>
-						 <label for="contact-name" class="ba-form-label"></label>
-						<span class='ba-form-error'>Required field</span>
+						<div class="form-enter">
+							<input type="email" id="contact-email"placeholder="Your Email"  data-valid='required email'  name='contact-email'>
+							<span class='ba-form-error'>Required field</span>
+						</div>
+						<div class="form-enter">
+							<input type="text" id="contact-name" placeholder="Subject" data-valid='required '  name='contact-name'>
+							 
+							<span class='ba-form-error'>Required field</span>
+						</div>
 					</div>
 					<textarea name="Message" id="Message" placeholder="Message" ></textarea>
 					<button class="send-btn ba-form-submit" >SEND MESSAGE</button>

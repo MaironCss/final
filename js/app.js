@@ -81,11 +81,11 @@ $('.ba-form').on('submit', function(e){
 
  if(!validateEmail.test(inputEmail.val())){
    //alert('incorrect email');
-   inputEmail.closest('.flex-form').find('.ba-form-error').css('display', 'block')
+   inputEmail.closest('.form-enter').find('.ba-form-error').css('display', 'block')
  }
 
  if(inputName.val() === ''){
-   inputName.closest('.flex-form').css('display', 'block')
+   inputName.closest('.form-enter').css('display', 'block')
  }
 
  
@@ -141,17 +141,3 @@ tll.
   staggerFromTo($('.template-tagline .style'), .2, {y:-50, opacity: 0}, {y:0, opacity: 1}, .1)
 
 
-$(window).scroll(function() {
-   
-            
-            if($(this).scrollTop()) {
-            // создаем эффекты
-
-              var tll1 = new TimelineMax();
-
-            tll1.
-            staggerFromTo($('.name-tagline .style'), .2, {y:-50, opacity: 0}, {y:0, opacity: 1}, .1)
-            }
-        
-    
-});
